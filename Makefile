@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.c push_swap.c parser.c \
-		err_handle.c
+		er_handle.c ex_func.c
 
 OBJS = $(SRCS: .c=.o)
 
