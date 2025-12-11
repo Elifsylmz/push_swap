@@ -16,7 +16,7 @@ void parse_args(int argc, char **argv);
 
 void check_numeric(char *str, char **numbers);
 long ft_atol(const char *str);
-void check_duplicate(long num, char **numbers, int index);
+void check_duplicate(long num, char **numbers, int i);
 
 void free_split(char **split);
 void err_exit(char **strings);
