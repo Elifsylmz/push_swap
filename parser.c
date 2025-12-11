@@ -66,7 +66,6 @@ void parse_args(int argc, char **argv)
         if (num < INT_MIN || num > INT_MAX)
             err_exit(numbers);
         check_duplicate(num, numbers, i);
-        printf(%l\n, num);
         i++;
     }
     free_split(numbers);

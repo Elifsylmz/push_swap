@@ -1,31 +1,31 @@
-NAME = push_swap
+NAME	= push_swap
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+cc		= cc
+CFLAGS  = -Wall -Wextra -Werror
 
-SRCS = main.c push_swap.c parser.c \
+SRCS	= main.c push_swap.c parser.c \
 		err_handle.c ex_func.c
 
-OBJS = $(SRCS: .c=.o)
+OBJS	= $(SRCS:.c=.o)
 
 MYLIBFT = ./libft
-LIBFT = $(MYLIBFT)/libft.a
+LIBFT	= $(MYLIBFT)/libft.a
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-		@make -C $(MYLIBFT)
+	$(MAKE) -C $(MYLIBFT)
 
 clean:
-		rm -rf $(OBJS)
-		@make -C $(MYLIBFT) clean
+	rm -f $(OBJS)
+	$(MAKE) -C $(MYLIBFT) clean
 
 fclean: clean
-		rm -rf $(NAME)
-		@make -C $(MYLIBFT) fclean
+	rm -f $(NAME)
+	$(MAKE) -C $(MYLIBFT) fclean
 
 re: fclean all
 
