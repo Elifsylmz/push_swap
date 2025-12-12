@@ -10,6 +10,20 @@
 # define INT_MAX 2147483647
 # define INT_MIN (-2147483648)
 
+typedef struct s_node
+{
+    int             value;
+    struct s_node   *next;
+    struct s_node   *prev;
+}   t_node;
+
+typedef struct s_stack
+{
+    t_node      *top;
+    t_node      *bottom;
+    int         size;
+}   t_stack;
+
 char *join_args(int argc, char **argv);
 char **get_numb(int argc, char **argv);
 void parse_args(int argc, char **argv);

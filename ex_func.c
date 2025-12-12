@@ -26,9 +26,7 @@ long ft_atol(const char *str)
     result = 0;
     sign = 1;
     i = 0;
-
-    while(str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-        i++;
+    
     if(str[i] == '-' || str[i] == '+')
     {
         if(str[i] == '-')
@@ -38,6 +36,8 @@ long ft_atol(const char *str)
     while(str[i] >= '0' && str[i] <= '9')
     {
         result = result * 10 + (str[i] - '0');
+        if (result * sign < INT_MIN || result * sign > INT_MAX)
+            return (0); // Overflow durumunda 0 döndür kontrolü yap
         i++;
     }
     return (result * sign);
