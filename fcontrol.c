@@ -17,10 +17,10 @@ int is_sorted(t_stack *a)
 {
     t_node *current;
 
-    if(a->size <= 1)
+    if (a->size <= 1)
         return (1);
     current = a->top;
-    while(current && current->next)
+    while (current && current->next)
     {
         if(current->value > current->next->value)
             return (0);
