@@ -1,71 +1,77 @@
 #include "push_swap.h"
 
-// set index 
-// find target index
-// set target
-
-void set_index(t_stack *stack)
+int    find_index(t_node *a, int *arr, int size)
 {
-    t_node *current;
-    int    i;
+    int i;
+    t_node *temp;
 
-    if(!stack || stack->size == 0)
-        return;
     i = 0;
-    current = stack->top;
-    while(current)
+    temp = a;
+    while (temp)
     {
-        current->index = i;
-        current = current->next;
+        if (temp->value == arr[i])
+            return (i);
         i++;
     }
+    return (-1);
 }
-
-int get_smallest_index(t_stack *a)
+void    sort_array(int *arr, int size)
 {
-    t_node *current;
-    int min_value;
-    int min_index;
+	int	i;
+	int	j;
+	int	temp;
 
-    current = a->top;
-    min_value = current->value;
-    min_index = current->index;
-    current = current->next;
-    while(current)
-    {
-        if(current->value < min_value)
-        {
-            min_value = current->value;
-            min_index = current->index;
-        }
-        current = current->next;
-    }
-    return (min_index);
+	if (!arr || size <= 0)
+		return (arr);
+	j = 0;
+	i = 0;
+	while (i < size - 1)
+	{
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (arr);
 }
 
-int  find_target_index(t_stack *a, int b_value)
+int *to_array(t_node *a, int size)
 {
-    t_node *current;
-    int target_index;
-    int target_value;
-    int found;
+    t_node *temp;
+    int *arr;
+    int i;
 
-    current = a->top;
-    target_index = 0;
-    target_value = 0;
-    found = 0;
-    while(current)
+    i = 0;
+    temp = a;
+    arr = malloc(size * sizeof(int));
+    while (temp)
     {
-        if(current->value > value && (!found || current->value < target_value))
-        {
-            target_value = current->value;
-            target_index = current->index;
-            found = 1;
-        }
-        current = current->next;
+        arr[i] = temp->value;
+        i++;
+        temp = temp->value;
     }
-    if(!found)
-        target_index = get_smallest_index(a);
-    return (target_index);
+    return (arr);
 }
 
+void    index_numbers(t_node *a)
+{
+    t_node *temp;
+    int     *arr;
+
+    temp = a;
+    arr = to_array(a, a->size);
+    sort_array(arr, a->size);
+    while (temp)
+    {
+        temp->value = find_index(a, arr, a->size);
+        temp = temp->next;
+    }
+}

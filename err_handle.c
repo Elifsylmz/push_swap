@@ -1,42 +1,42 @@
 #include "push_swap.h"
 
-void free_split(char **split)
+void	free_split(char **split)
 {
-    int i;
+	int	i;
 
-    if (!split)
-        return;
-    i = 0;
-    while (split[i])
-    {
-        free(split[i]);
-        i++;
-    }
-    free(split);
+	if (!split)
+		return ;
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
 
-void    error(void)
+void	error(void)
 {
-    write(2, "Error\n", 6);
-    exit(1);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-void err_exit(char **strings)
+void	err_exit(char **strings)
 {
-    if (strings)
-        free_split(strings);
-    write(2, "Error\n", 6);
-    exit(1);
+	if (strings)
+		free_split(strings);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-void err_exit_all(t_stack *a, t_stack *b, char **numbers)
+void	err_exit_all(t_stack *a, t_stack *b, char **numbers)
 {
-    if (a)
-        free_stack(a);
-    if (b)
-        free_stack(b);
-    if (numbers)
-        free_split(numbers);
-    write(2, "Error\n", 6);
-    exit(1);
+	if (a)
+		free_stack(a);
+	if (b)
+		free_stack(b);
+	if (numbers)
+		free_split(numbers);
+	write(2, "Error\n", 6);
+	exit(1);
 }
