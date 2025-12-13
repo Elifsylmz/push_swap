@@ -1,23 +1,17 @@
 #include "push_swap.h"
-void control()
+
+void debug_print_stack(t_stack *s)
 {
-    int i;
-    
-    i = 1;
-    while(i < argc)
+    t_node *cur = s->top;
+    while (cur)
     {
-        if(is_space(argv[i]) == 0)
-            error();
-        i++;
+        ft_putnbr_fd(cur->value, 2);
+        ft_putchar_fd(' ', 2);
+        cur = cur->next;
     }
-    i = 1;
-    while(i < argc)
-    {
-        if(argv[i][0] == '\0')
-            error();
-        i++;
-    }
+    ft_putchar_fd('\n', 2);
 }
+
 int main(int argc, char **argv)
 {
     t_stack a;
@@ -28,10 +22,15 @@ int main(int argc, char **argv)
     control(argc, argv);
     init_stack(&a);
     init_stack(&b);
-    parse_args(argc, argv);
+    parse_args(argc, argv, &a);
+    
     if(is_sorted(&a))
-        return(0);
-    sort(&a, &b);
+    {
+        free_stack(&a);
+        return (0);
+    }
+    debug_print_stack(&a);
+    //sort(&a, &b);
 
     free_stack(&a);
     free_stack(&b);

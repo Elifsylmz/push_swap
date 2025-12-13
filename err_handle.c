@@ -1,5 +1,20 @@
 #include "push_swap.h"
 
+void free_split(char **split)
+{
+    int i;
+
+    if (!split)
+        return;
+    i = 0;
+    while (split[i])
+    {
+        free(split[i]);
+        i++;
+    }
+    free(split);
+}
+
 void    error(void)
 {
     write(2, "Error\n", 6);
@@ -14,17 +29,14 @@ void err_exit(char **strings)
     exit(1);
 }
 
-void free_split(char **split)
+void err_exit_all(t_stack *a, t_stack *b, char **numbers)
 {
-    int i;
-
-    if (!split)
-        return;
-    i = 0;
-    while (split[i])
-    {
-        free(split[i]);
-        i++;
-    }
-    free(split);
+    if (a)
+        free_stack(a);
+    if (b)
+        free_stack(b);
+    if (numbers)
+        free_split(numbers);
+    write(2, "Error\n", 6);
+    exit(1);
 }

@@ -24,15 +24,27 @@ typedef struct s_stack
     int         size;
 }   t_stack;
 
+int  is_sorted(t_stack *a);
+//void sort(t_stack *a, t_stack *b);
+
 char *join_args(int argc, char **argv);
 char **get_numb(int argc, char **argv);
-void parse_args(int argc, char **argv);
+void parse_args(int argc, char **argv, t_stack *a);
 
 void check_numeric(char *str, char **numbers);
 long ft_atol(const char *str);
-void check_duplicate(long num, char **numbers, int i);
+int check_duplicate (t_stack *a, int num);
 
 void free_split(char **split);
+void error(void);
 void err_exit(char **strings);
+void err_exit_all(t_stack *a, t_stack *b, char **numbers);
+
+void control(int argc, char **argv);
+int is_space(char *str);
+
+void init_stack(t_stack *stack);
+int push_stack_top(t_stack *stack, int value);
+void free_stack(t_stack *stack);
 
 #endif

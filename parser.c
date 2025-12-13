@@ -51,7 +51,7 @@ char **get_numb(int argc, char **argv)
     return (numbers);
 }
 
-void parse_args(int argc, char **argv)
+void parse_args(int argc, char **argv, t_stack *a)
 {
     char    **numbers;
     int     i;
@@ -60,14 +60,18 @@ void parse_args(int argc, char **argv)
     numbers = get_numb(argc, argv);
     i = 0;
     while (numbers[i])
+        i++;
+    while (i > 0)
     {
+        i--;
         check_numeric(numbers[i], numbers);
         num = ft_atol(numbers[i]);
         if (num < INT_MIN || num > INT_MAX)
-            err_exit(numbers);
-        check_duplicate(num, numbers, i);
-        printf("%ld\n", num);
-        i++;
+            err_exit_all(a, NULL, numbers);
+        if (check_duplicate(a, (int)num))
+            err_exit_all(a, NULL, numbers);
+        if (!push_stack_top(a, (int)num))
+            err_exit_all(a, NULL, numbers);
     }
     free_split(numbers);
 }

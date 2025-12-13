@@ -1,10 +1,12 @@
 NAME	= push_swap
 
-cc		= cc
+CC		= cc
 CFLAGS  = -Wall -Wextra -Werror
 
 SRCS	= main.c push_swap.c parser.c \
-		err_handle.c ex_func.c
+		err_handle.c ex_func.c init.c utils.c \
+		fcontrol.c
+
 
 OBJS	= $(SRCS:.c=.o)
 

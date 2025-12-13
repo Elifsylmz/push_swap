@@ -19,6 +19,7 @@ void check_numeric(char *str, char **numbers)
 
 long ft_atol(const char *str)
 {
+    long long limit;
     long result;
     int sign;
     int i;
@@ -26,36 +27,35 @@ long ft_atol(const char *str)
     result = 0;
     sign = 1;
     i = 0;
-    
     if(str[i] == '-' || str[i] == '+')
     {
         if(str[i] == '-')
             sign = -1;
         i++;
     }
-    while(str[i] >= '0' && str[i] <= '9')
+    limit = (long long)INT_MAX;
+    if (sign == -1)
+        limit = (long long)INT_MAX + 1;
+    while (str[i])
     {
+        if (result > (limit - (str[i] - '0')) / 10)
+            return (limit * sign + sign);
         result = result * 10 + (str[i] - '0');
-        if (result * sign < INT_MIN || result * sign > INT_MAX)
-            return (0); // Overflow durumunda 0 döndür kontrolü yap
         i++;
     }
-    return (result * sign);
+    return ((long)(result * sign));
 }
 
-void check_duplicate (long num, char **numbers, int index)
+int check_duplicate (t_stack *a, int num)
 {
-    // stack oluşturunca bunu orda kullanabilirsin
-    // tekrar tek ft_atol çağırmak yerine iyi olur
-    int j;
+    t_node *current;
 
-    if(index == 0)
-        return;
-    j = index - 1;
-    while(j >= 0)
+    current = a->top;
+    while (current)
     {
-        if(ft_atol(numbers[j]) == num)
-            err_exit(numbers);
-        j--;
+        if (current->value == num)
+            return (1);
+        current = current->next;
     }
+    return (0);
 }
