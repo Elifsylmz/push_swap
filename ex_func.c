@@ -21,7 +21,7 @@ int	check_numeric(char *str)
 long	ft_atol(const char *str)
 {
 	long long	limit;
-	long		result;
+	long long	result;
 	int			sign;
 	int			i;
 

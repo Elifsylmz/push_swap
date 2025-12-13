@@ -16,9 +16,6 @@ static t_node	*new_node(int value)
 		return (NULL);
 	node->value = value;
 	node->index = 0;
-	node->target_i = 0;
-	node->cost_a = 0;
-	node->cost_b = 0;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);

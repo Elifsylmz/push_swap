@@ -3,9 +3,9 @@ NAME	= push_swap
 CC		= cc
 CFLAGS  = -Wall -Wextra -Werror
 
-SRCS	= main.c push_swap.c parser.c \
+SRCS	= push_swap.c parser.c \
 		err_handle.c ex_func.c init.c utils.c \
-		fcontrol.c \
+		fcontrol.c index.c radix.c \
 		./operations/push.c ./operations/swap.c \
 		./operations/rotate.c ./operations/rev_rotate.c
 

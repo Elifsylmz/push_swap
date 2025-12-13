@@ -9,7 +9,7 @@ static void	rotate_one(t_stack *stack)
 	if (!stack || stack->size < 2)
 		return ;
 	node = stack->top;
-	;
+
 	stack->top = node->next;
 	stack->top->prev = NULL;
 	node->next = NULL;

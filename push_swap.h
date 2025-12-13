@@ -2,9 +2,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 # define INT_MAX 2147483647
@@ -13,23 +11,22 @@
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*next;
-	int				size;
+	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_stack
 {
-	int			value;
-	int			index;
-	int			target_i;
-	int			cost_a;
-	int			cost_b;
+	int 		size;
 	t_node		*top;
 	t_node		*bottom;
 }	t_stack;
 
-int					is_sorted(t_stack *a);
-// void  sort(t_stack *a, t_stack *b);
+
+void		control(int argc, char **argv);
+int			is_space(char *str);
+int			is_sorted(t_stack *a);
 
 char		*join_args(int argc, char **argv);
 char		**get_numb(int argc, char **argv);
@@ -43,9 +40,6 @@ void		free_split(char **split);
 void		error(void);
 void		err_exit(char **strings);
 void		err_exit_all(t_stack *a, t_stack *b, char **numbers);
-
-void		control(int argc, char **argv);
-int			is_space(char *str);
 
 void		init_stack(t_stack *stack);
 int			push_stack_top(t_stack *stack, int value);
@@ -62,5 +56,10 @@ void		rr(t_stack *a, t_stack *b);
 void		rra(t_stack *a);
 void		rrb(t_stack *b);
 void		rrr(t_stack *a, t_stack *b);
+
+//radix
+void 		index_stack(t_stack *a);
+
+void 		sort(t_stack *a, t_stack *b);
 
 #endif
