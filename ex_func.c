@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void check_numeric(char *str, char **numbers)
+int check_numeric(char *str)
 {
     int i;
 
@@ -8,13 +8,14 @@ void check_numeric(char *str, char **numbers)
     if (str[0] == '-' || str[0] == '+')
         i++;
     if (str[i] == '\0')
-        err_exit(numbers);
+        return (0);
     while (str[i])
     {
         if (str[i] < '0' || str[i] > '9')
-            err_exit(numbers);
+            return (0);
         i++;
     }
+    return (1);
 }
 
 long ft_atol(const char *str)

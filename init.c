@@ -7,14 +7,18 @@ void init_stack(t_stack *stack)
     stack->size = 0;
 }
 
-t_node *new_node(int value)
+static t_node *new_node(int value)
 {
     t_node *node;
 
     node = malloc(sizeof(t_node));
-    if(!node)
-        return(NULL);
+    if (!node)
+        return (NULL);
     node->value = value;
+    node->index = 0;
+    node->target_i = 0;
+    node->cost_a = 0;
+    node->cost_b = 0;
     node->next = NULL;
     node->prev = NULL;
     return (node);

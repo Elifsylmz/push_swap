@@ -64,7 +64,8 @@ void parse_args(int argc, char **argv, t_stack *a)
     while (i > 0)
     {
         i--;
-        check_numeric(numbers[i], numbers);
+        if(!check_numeric(numbers[i]))
+            err_exit_all(a, NULL, numbers);
         num = ft_atol(numbers[i]);
         if (num < INT_MIN || num > INT_MAX)
             err_exit_all(a, NULL, numbers);
