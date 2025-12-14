@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ex_func.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:24 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:24 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	check_numeric(char *str)
@@ -49,7 +61,7 @@ long	ft_atol(const char *str)
 
 int	check_duplicate(t_stack *a, int num)
 {
-	t_node *current;
+	t_node	*current;
 
 	current = a->top;
 	while (current)

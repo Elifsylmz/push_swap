@@ -1,6 +1,16 @@
-#include "../push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:05 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:08 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// ra rb rr
+#include "../push_swap.h"
 
 static void	rotate_one(t_stack *stack)
 {
@@ -9,7 +19,6 @@ static void	rotate_one(t_stack *stack)
 	if (!stack || stack->size < 2)
 		return ;
 	node = stack->top;
-
 	stack->top = node->next;
 	stack->top->prev = NULL;
 	node->next = NULL;

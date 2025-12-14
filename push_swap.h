@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:39 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:39 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -18,11 +30,10 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-	int 		size;
+	int			size;
 	t_node		*top;
 	t_node		*bottom;
 }	t_stack;
-
 
 int			is_space(char *str);
 void		control(int argc, char **argv);
@@ -57,12 +68,9 @@ void		rra(t_stack *a);
 void		rrb(t_stack *b);
 void		rrr(t_stack *a, t_stack *b);
 
-//radix
-void 		index_stack(t_stack *a);
-
-void 		under_seven(t_stack *a, t_stack *b);
-
-void 		sort(t_stack *a, t_stack *b);
-void	radix_sort(t_stack *a, t_stack *b);
+void		index_stack(t_stack *a);
+void		under_seven(t_stack *a, t_stack *b);
+void		sort(t_stack *a, t_stack *b);
+void		radix_sort(t_stack *a, t_stack *b);
 
 #endif

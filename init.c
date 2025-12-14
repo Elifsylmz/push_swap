@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:31 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:31 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	init_stack(t_stack *stack)
@@ -45,8 +57,8 @@ int	push_stack_top(t_stack *stack, int value)
 
 void	free_stack(t_stack *stack)
 {
-	t_node *current;
-	t_node *next;
+	t_node	*current;
+	t_node	*next;
 
 	current = stack->top;
 	while (current)

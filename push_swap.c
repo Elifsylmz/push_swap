@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:36 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:36 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
- void	sort(t_stack *a, t_stack *b)
+void	sort(t_stack *a, t_stack *b)
 {
 	index_stack(a);
 	if (a->size <= 7)
 		under_seven(a, b);
 	else
 		radix_sort(a, b);
-} 
+}
 
 int	main(int argc, char **argv)
 {

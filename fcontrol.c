@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fcontrol.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:26 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:26 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	is_space(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -29,7 +41,7 @@ void	control(int argc, char **argv)
 
 int	is_sorted(t_stack *a)
 {
-	t_node *current;
+	t_node	*current;
 
 	if (a->size <= 1)
 		return (1);

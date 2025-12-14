@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:41 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:41 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int get_max_bits(int max)
+static int	get_max_bits(int max)
 {
-    int bits;
+	int	bits;
 
-    bits = 0;
-    while ((max >> bits) != 0)
-        bits++;
-    return (bits);
+	bits = 0;
+	while ((max >> bits) != 0)
+		bits++;
+	return (bits);
 }
 
 void	radix_sort(t_stack *a, t_stack *b)

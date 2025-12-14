@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   under_seven.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eyilmaz <eyilmaz@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 05:36:43 by eyilmaz           #+#    #+#             */
+/*   Updated: 2025/12/14 05:36:43 by eyilmaz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int  find_min_pos(t_stack *a)
+static int	find_min_pos(t_stack *a)
 {
-    t_node *tmp;
-    int    	pos; 
-    int	    bindex;
-	int 	bposition;
+	t_node	*tmp;
+	int		pos;
+	int		bindex;
+	int		bposition;
 
 	tmp = a->top;
 	pos = 0;
@@ -24,7 +36,7 @@ static int  find_min_pos(t_stack *a)
 	return (bposition);
 }
 
-static void bring_to_top(t_stack *a, int pos)
+static void	bring_to_top(t_stack *a, int pos)
 {
 	if (pos <= a->size / 2)
 	{
@@ -38,11 +50,11 @@ static void bring_to_top(t_stack *a, int pos)
 	}
 }
 
-static void sort_for_three(t_stack *a)
+static void	sort_for_three(t_stack *a)
 {
-	int x;
-	int y;
-	int z;
+	int	x;
+	int	y;
+	int	z;
 
 	x = a->top->index;
 	y = a->top->next->index;
@@ -65,11 +77,11 @@ static void sort_for_three(t_stack *a)
 		rra(a);
 }
 
-void under_seven(t_stack *a, t_stack *b)
+void	under_seven(t_stack *a, t_stack *b)
 {
-	int pos;
+	int	pos;
 
-	if(a->size == 2)
+	if (a->size == 2)
 	{
 		if (a->top->index > a->top->next->index)
 			sa(a);
