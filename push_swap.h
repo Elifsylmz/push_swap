@@ -63,5 +63,6 @@ void 		index_stack(t_stack *a);
 void 		under_seven(t_stack *a, t_stack *b);
 
 void 		sort(t_stack *a, t_stack *b);
+void	radix_sort(t_stack *a, t_stack *b);
 
 #endif

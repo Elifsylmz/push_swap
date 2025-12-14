@@ -5,8 +5,8 @@
 	index_stack(a);
 	if (a->size <= 7)
 		under_seven(a, b);
-	/*else
-		radix_sort(a, b);*/
+	else
+		radix_sort(a, b);
 } 
 
 int	main(int argc, char **argv)
