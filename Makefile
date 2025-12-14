@@ -5,7 +5,7 @@ CFLAGS  = -Wall -Wextra -Werror
 
 SRCS	= push_swap.c parser.c \
 		err_handle.c ex_func.c init.c utils.c \
-		fcontrol.c index.c radix.c \
+		fcontrol.c index.c under_seven.c radix.c \
 		./operations/push.c ./operations/swap.c \
 		./operations/rotate.c ./operations/rev_rotate.c
 

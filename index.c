@@ -61,20 +61,20 @@ void	index_stack(t_stack *a)
 {
 	t_node	*tmp;
 	int		*arr;
-	int		idx;
+	int		nodidx;
 
 	arr = to_array(a);
 	bubble_sort(arr, a->size);
 	tmp = a->top;
 	while (tmp)
 	{
-		idx = find_index(arr, a->size, tmp->value);
-		if (idx < 0)
+		nodidx = find_index(arr, a->size, tmp->value);
+		if (nodidx < 0)
 		{
 			free(arr);
 			err_exit_all(a, NULL, NULL);
 		}
-		tmp->index = idx;
+		tmp->index = nodidx;
 		tmp = tmp->next;
 	}
 	free(arr);

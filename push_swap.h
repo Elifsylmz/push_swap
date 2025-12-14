@@ -24,8 +24,8 @@ typedef struct s_stack
 }	t_stack;
 
 
-void		control(int argc, char **argv);
 int			is_space(char *str);
+void		control(int argc, char **argv);
 int			is_sorted(t_stack *a);
 
 char		*join_args(int argc, char **argv);
@@ -59,6 +59,8 @@ void		rrr(t_stack *a, t_stack *b);
 
 //radix
 void 		index_stack(t_stack *a);
+
+void 		under_seven(t_stack *a, t_stack *b);
 
 void 		sort(t_stack *a, t_stack *b);
 
